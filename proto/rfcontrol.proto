@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package rfcontrol;
+
+// The RF Control service definition
+service RFControlService {
+  // Set RF configuration parameters
+  rpc SetRFSettings(RFConfig) returns (RFResponse);
+  
+  // Get current device status
+  rpc GetDeviceStatus(DeviceRequest) returns (DeviceStatus);
+  
+  // Query device information
+  rpc GetDeviceInfo(DeviceRequest) returns (DeviceInfo);
+}
+
+// RF Configuration message
+message RFConfig {
+  string device_id = 1;           // Device identifier
+  double frequency = 2;           // Frequency in Hz
+  double gain = 3;                // Gain in dB
+  double bandwidth = 4;           // Bandwidth in Hz (optional)
+  string antenna = 5;             // Antenna selection (optional)
+}
+
+// Response message for RF configuration
+message RFResponse {
+  bool success = 1;               // Operation success/failure
+  string message = 2;             // Response message
+  DeviceStatus status = 3;        // Current device status
+  int64 timestamp = 4;            // Unix timestamp
+}
+
+// Device request message
+message DeviceRequest {
+  string device_id = 1;           // Device identifier
+}
+
+// Device status message
+message DeviceStatus {
+  string device_id = 1;           // Device identifier
+  bool connected = 2;             // Connection status
+  double current_frequency = 3;   // Current frequency in Hz
+  double current_gain = 4;        // Current gain in dB
+  double current_bandwidth = 5;   // Current bandwidth in Hz
+  string current_antenna = 6;     // Current antenna selection
+  double temperature = 7;         // Device temperature in Celsius
+  string status_message = 8;      // Status description
+}
+
+// Device information message
+message DeviceInfo {
+  string device_id = 1;           // Device identifier
+  string manufacturer = 2;        // Device manufacturer
+  string model = 3;               // Device model
+  string serial_number = 4;       // Serial number
+  string firmware_version = 5;    // Firmware version
+  double min_frequency = 6;       // Minimum frequency in Hz
+  double max_frequency = 7;       // Maximum frequency in Hz
+  double min_gain = 8;            // Minimum gain in dB
+  double max_gain = 9;            // Maximum gain in dB
+}
