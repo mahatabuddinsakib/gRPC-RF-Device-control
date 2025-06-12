@@ -74,6 +74,29 @@ Output:
 ```bash
 python client.py interactive
 ```
+#### Interactive Session Example
+```
+rf_control> set usrp0 -f 2.4e9 -g 20 -b 20e6 -a TX/RX
+Setting RF parameters for device 'usrp0'...
+  Frequency: 2.400 GHz
+  Gain: 20.0 dB
+  Bandwidth: 20.0 MHz
+  Antenna: TX/RX
+
+Server Response:
+  Success: OK
+  Message: Frequency set to 2.400 GHz; Gain set to 20.0 dB; Bandwidth set to 20.0 MHz; Antenna set to TX/RX
+  Timestamp: Mon Jun 10 17:35:42 2024
+
+Device Status:
+  Connected: Ok
+  Frequency: 2.400 GHz
+  Gain: 20.0 dB
+  Bandwidth: 20.0 MHz
+  Antenna: TX/RX
+  Temperature: 24.7°C
+  Status: Device operational
+```
 
 #### Command Line Interface
 ```bash
@@ -87,29 +110,6 @@ python client.py status usrp0
 python client.py info usrp0
 ```
 
-#### Interactive Session Example
-```
-rf_control> set usrp0 -f 2.4e9 -g 20 -b 20e6 -a TX/RX
-Setting RF parameters for device 'usrp0'...
-  Frequency: 2.400 GHz
-  Gain: 20.0 dB
-  Bandwidth: 20.0 MHz
-  Antenna: TX/RX
-
-Server Response:
-  Success: ✓
-  Message: Frequency set to 2.400 GHz; Gain set to 20.0 dB; Bandwidth set to 20.0 MHz; Antenna set to TX/RX
-  Timestamp: Mon Jun 10 17:35:42 2024
-
-Device Status:
-  Connected: ✓
-  Frequency: 2.400 GHz
-  Gain: 20.0 dB
-  Bandwidth: 20.0 MHz
-  Antenna: TX/RX
-  Temperature: 24.7°C
-  Status: Device operational
-```
 
 ##  VISA/UHD Integration
 
