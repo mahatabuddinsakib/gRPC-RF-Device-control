@@ -1,0 +1,14 @@
+grpcio==1.60.0
+grpcio-tools==1.60.0
+protobuf==4.25.1
+
+# Optional: For real VISA integration
+# pyvisa==1.14.1
+# pyvisa-py==0.7.1
+
+# Optional: For real UHD integration  
+# uhd==4.4.0.0 (requires UHD C++ library installed)
+
+# Development dependencies
+pytest==7.4.3
+pytest-asyncio==0.21.1
